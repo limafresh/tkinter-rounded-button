@@ -1,5 +1,5 @@
 """
-Version: 0.1
+Version: 0.1.1
 License: Unlicense
 """
 
@@ -118,35 +118,27 @@ class RoundedButton(Canvas):
             self.command()
 
     def config(self, **kwargs):
+        self.delete("button")
         if "width" in kwargs:
-            self.delete("button")
             self.width = kwargs["width"]
             self.configure(width=self.width)
         if "height" in kwargs:
-            self.delete("button")
             self.height = kwargs["height"]
             self.configure(height=self.height)
         if "text" in kwargs:
-            self.delete("button")
             self.text = kwargs["text"]
         if "font" in kwargs:
-            self.delete("button")
             self.font = kwargs["font"]
         if "radius" in kwargs:
-            self.delete("button")
             self.radius = kwargs["radius"]
         if "bg_color" in kwargs:
-            self.delete("button")
             self.bg_color = kwargs["bg_color"]
         if "fg_color" in kwargs:
-            self.delete("button")
             self.fg_color = kwargs["fg_color"]
         if "command" in kwargs:
-            self.delete("button")
             self.command = kwargs["command"]
         if "cursor" in kwargs:
-            self.delete("button")
-            self.command = kwargs["command"]
+            self.cursor = kwargs["cursor"]
         self._create_button()
 
     def cget(self, key):
